@@ -1,11 +1,8 @@
-var continents = new Array();
-continents.push("Europe");
-continents.push("Asia");
-continents.push("Australia");
-continents.push("Antarctica");
-continents.push("North America");
-continents.push("South America");
-continents.push("Africa");
+<script>
+var file1 = "tio.txt";
+GetExtension(file1);
 
-alert("The JSON representation of the continents array is: " +
- continents.toJSONString());
+function GetExtension(fname){
+	return fname.substr((~-fname.lastIndexOf(".") >>> 0) + 2);
+}
+</script>

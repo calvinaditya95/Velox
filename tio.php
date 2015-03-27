@@ -2,33 +2,12 @@
 <html>
 <body>
 
-<div id="id01"></div>
+<?php
+echo "hoiii";
+echo exec('C:/Users/Satria/Desktop/Assalamualaikum beijing.docx');
+//print_r(output);
+?>
 
-
-
-<script>
-var xmlhttp = new XMLHttpRequest();
-var url = "SearchResult.txt";
-
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var myArr = JSON.parse(xmlhttp.responseText);
-        myFunction(myArr);
-    }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-
-function myFunction(arr) {
-    var out = "";
-    var i;
-    for(i = 0; i < arr.length; i++) {
-        out += '<a href="' + arr[i].url + '">' + 
-        arr[i].display + '</a><br>';
-    }
-    document.getElementById("id01").innerHTML = out;
-}
-</script>
 
 </body>
 </html>
