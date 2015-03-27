@@ -18,8 +18,8 @@ namespace LSE
             public string path;
             public string line;
         };
-        
-        public static Queue<sResult> SearchResult;
+
+        public static Queue<sResult> SearchResult = new Queue<sResult>();
         
         public class Node
         {
@@ -52,12 +52,28 @@ namespace LSE
         
         public static void PrintSearchResult()
         {
-            while (SearchResult.Count > 0)
+            sResult[] ResultArray = new sResult[1000];
+            ResultArray = SearchResult.ToArray();
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("SearchResult.txt"))
             {
-                sResult temp = SearchResult.Dequeue();
-                Console.WriteLine(temp.path);
-                Console.WriteLine(temp.line);
-                Console.WriteLine(" ");
+                int i = 0;
+                file.WriteLine("[");
+                while (i < ResultArray.Length)
+                {
+                    file.WriteLine("{");
+                    file.Write("\"display\": ");
+                    file.Write("\"");
+                    file.Write(ResultArray[i].line);
+                    file.WriteLine("\",");
+                    file.Write("\"url\": ");
+                    file.Write("\"");
+                    file.Write(ResultArray[i].path);
+                    file.WriteLine("\"");
+                    file.WriteLine("},");
+                    i++;
+                }
+                file.WriteLine("]");
             }
         }
 
@@ -216,20 +232,13 @@ namespace LSE
             }
         }
 
-        static void Init()
-        {
-            Keyword = Console.ReadLine();
-            rootDir = "D:\\Games";
-            SearchResult = new Queue<sResult>();
-        }
-
         static void Main(string[] args)
         {
-            Init();
+            Keyword = "negara api";
+            rootDir = "D:\\Games";
             DFS(rootDir);
             //BFS(rootDir);
             PrintSearchResult();
-            Console.ReadLine();
         }
     }
 }
