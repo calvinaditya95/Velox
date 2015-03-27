@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Velox Search Engine</title>
+        <style class="cp-pen-styles">
+            .progress {
+                width: 100%;
+                height: 50px;
+            }
+
+            .progress-wrap {
+                background: #f80;
+                margin: 20px 0;
+                overflow: hidden;
+                position: relative;
+            }
+            .progress-wrap .progress-bar {
+                background: #ddd;
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+		
+        <div align="center" style="position: relative; top: 50%;">
+            <form action="" id="search_form">
+				
+                <p style="font: 60px Georgia">VELOX</p>
+                <input type="text" id="textbox" name="textbox" value="Mau VELOX kanan apa kiri, mas?" style="width:550px ; height:30px; text-indent: 10px">
+                <br><br>
+                <input type="submit" id="search" name="search" value="Search" style="width:100px; height:30px; font: 16px Georgia">
+                <table style="font: 16px Georgia; color: blue" border="0" cellpadding="60">
+                    <tr>
+                        <td><u>Path</u></td>
+                        <td><u>Traversal Algorithm</u></td>
+                        <td><u>About</u></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="progress-wrap progress" data-progress-percent="100">
+                <div class="progress-bar progress"></div>
+            </div>
+            <script src="jquery.min.js"></script>
+            <script>
+                document.getElementById("search_form").onsubmit =
+                function moveProgressBar() {
+                    console.log('moveProgressBar');
+                    var getPercent = $('.progress-wrap').data('progress-percent') / 100;
+                    var getProgressWrapWidth = $('.progress-wrap').width();
+                    var progressTotal = getPercent * getProgressWrapWidth;
+                    var animationLength = 2500;
+                    $('.progress-bar').stop().animate({ left: progressTotal }, animationLength);
+                    setTimeout(function () { parent.location = 'pilot2.html'; }, 3000);
+                    return false;
+                }
+            </script>
+        </div>
+    </body>
+</html>
