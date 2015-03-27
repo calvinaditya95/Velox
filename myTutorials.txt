@@ -1,7 +1,7 @@
 [
 {
 "display": "HTML Tutorial",
-"url": "C:\xampp"
+"url": "http://www.google.com"
 },
 {
 "display": "CSS Tutorial",

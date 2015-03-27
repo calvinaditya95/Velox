@@ -1,0 +1,14 @@
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\bin\Debug\LSE.exe.config
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\obj\Debug\LSE.csprojResolveAssemblyReference.cache
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\obj\Debug\LSE.csproj.ResolveComReference.cache
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\bin\Debug\LSE.exe
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\bin\Debug\LSE.pdb
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\obj\Debug\LSE.exe
+c:\users\deus.caj\documents\visual studio 2013\Projects\LSE\LSE\obj\Debug\LSE.pdb
+C:\xampp\htdocs\web\LSE\LSE\bin\Debug\LSE.exe.config
+C:\xampp\htdocs\web\LSE\LSE\obj\Debug\LSE.csproj.ResolveComReference.cache
+C:\xampp\htdocs\web\LSE\LSE\obj\Debug\LSE.exe
+C:\xampp\htdocs\web\LSE\LSE\obj\Debug\LSE.pdb
+C:\xampp\htdocs\web\LSE\LSE\obj\Debug\LSE.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\web\LSE\LSE\bin\Debug\LSE.exe
+C:\xampp\htdocs\web\LSE\LSE\bin\Debug\LSE.pdb

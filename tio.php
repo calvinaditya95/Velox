@@ -1,9 +1,34 @@
-<?php
-[COM_DOT_NET]
+<!DOCTYPE html>
+<html>
+<body>
 
-$runCommand = "D:\\ScanBoyConsole\\ScanBoy_Console.exe COM1 9600 8 1 0 1"; 
-$WshShell = new COM("WScript.Shell");
-$output = $WshShell->Exec($runCommand)->StdOut->ReadAll;
-json_decode($output);
+<div id="id01"></div>
 
-?>
+
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "SearchResult.txt";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        myFunction(myArr);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<a href="' + arr[i].url + '">' + 
+        arr[i].display + '</a><br>';
+    }
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+</body>
+</html>

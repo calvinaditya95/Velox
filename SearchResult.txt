@@ -1,0 +1,14 @@
+[
+{
+"display": "hello sadsfadf",
+"url": "file://localhost/C:/Users/Satria/Desktop/hei.txt"
+},
+{
+"display": "Hello",
+"url": "file://localhost/C:/Users/Satria/Desktop/Assalamualaikum beijing.docx"
+},
+{
+"display": "Hello oii hello sdakjfladskjf",
+"url": "http://www.google.com"
+}
+]
