@@ -7,8 +7,8 @@
 <div id="id02"></div>
 <script>
     function Start() {
-	<?php exec('LSE.exe "'. $keyword . '" "' . $sDir . '"'); ?>;
-	Search();
+        <?php exec('LSE.exe "'. $keyword . '" "' . $sDir . '"'); ?>;
+        Search();
     }
 
     function Search() {
@@ -25,10 +25,16 @@
     }
 
     function DisplayResult(arr) {
+        var searchMask = "<?php echo $_GET["keyword"]; ?>";
+        var regEx = new RegExp(searchMask, "ig");
+        var replaceMask = "<b>" + searchMask + "</b>";
         var out = "";
         var i;
         for (i = 0; i < arr.length; i++) {
-            out += '<a href="Exec.php?path=' + arr[i].url + '" TARGET="_blank">' + arr[i].url + '</a><br>' + arr[i].display + '<br><br>';
+            var temp = "";
+            temp += arr[i].display;
+            var display = temp.replace(regEx, replaceMask);
+            out += '<a href="Exec.php?path=' + arr[i].url + '" TARGET="_blank">' + arr[i].url + '</a><br>' + display + '<br><br>';
         }
         document.getElementById("id01").innerHTML = out;
     }
