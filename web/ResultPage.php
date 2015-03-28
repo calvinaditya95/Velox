@@ -34,7 +34,10 @@
             var temp = "";
             temp += arr[i].display;
             var display = temp.replace(regEx, replaceMask);
-            out += '<a href="Exec.php?path=' + arr[i].url + '" TARGET="_blank">' + arr[i].url + '</a><br>' + display + '<br><br>';
+            if (i > 0 && arr[i].url == arr[i-1].url)
+                out += display + '<br>';
+            else
+                out += '<br><a href="Exec.php?path=' + arr[i].url + '" TARGET="_blank">' + arr[i].url + '</a><br>' + display + '<br>';
         }
         document.getElementById("id01").innerHTML = out;
     }
