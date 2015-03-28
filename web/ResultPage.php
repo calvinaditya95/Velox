@@ -1,13 +1,13 @@
 <?php $keyword = $_GET["keyword"]; ?>
 <?php $sDir = $_GET["sDir"]; ?>
+<?php $mode = $_GET["mode"]; ?>
 <!DOCTYPE html>
 <html>
 <body onload="Start()">
 <div id="id01"></div>
-<div id="id02"></div>
 <script>
     function Start() {
-        <?php exec('LSE.exe "'. $keyword . '" "' . $sDir . '"'); ?>;
+        <?php exec('LSE.exe "'. $keyword . '" "' . $sDir . '" "' . $mode . '"'); ?>;
         Search();
     }
 
@@ -37,7 +37,9 @@
             if (i > 0 && arr[i].url == arr[i-1].url)
                 out += display + '<br>';
             else
-                out += '<br><a href="Exec.php?path=' + arr[i].url + '" TARGET="_blank">' + arr[i].url + '</a><br>' + display + '<br>';
+                out += '<br><a href="Exec.php?path=' + arr[i].url + '" 
+
+TARGET="_blank">' + arr[i].url + '</a><br>' + display + '<br>';
         }
         document.getElementById("id01").innerHTML = out;
     }
